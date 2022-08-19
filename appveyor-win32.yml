@@ -37,7 +37,7 @@ install:
   - haxelib git hxWidgets https://github.com/haxeui/hxWidgets
 
 build_script:
-  - haxelib run lime build windows
+  - haxelib run lime build windows -32
 artifacts:
   - path: crash-dialog/build/windows
     name: CrashHandler
