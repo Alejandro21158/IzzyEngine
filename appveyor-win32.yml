@@ -39,6 +39,6 @@ install:
 build_script:
   - haxelib run lime build windows -32
 artifacts:
-  - path: crash-dialog/build/windows
+  - path: crash-dialog/build/windows/Main.exe
     name: CrashHandler
     type: zip
