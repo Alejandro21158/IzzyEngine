@@ -18,7 +18,7 @@ class Main
 	static final quotes:Array<String> = [
 		"Blueballed.", // gedehari
 		"This isn't spooky, this is scary!", // gedehari
-		"Izzy Engine is D-izzy.", // 52
+		"Izzy Engine the best engine.", // 52
 		"Useless, but not for long.", // ito
 		"He's in your bed, and Izzy has crashed.", // ito
 		"I think I'm dying this time.", // ito
@@ -88,6 +88,10 @@ class Main
 				{
 					#if windows
 					new Process("IzzyEngine.exe", []);
+					#elseif windows
+					new Process("KadeEngine.exe", []);
+					#elseif windows
+					new Process("PsychEngine.exe", []);
 					#elseif linux
 					new Process("./IzzyEngine", []);
 					#end
