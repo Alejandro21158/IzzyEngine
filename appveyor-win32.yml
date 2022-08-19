@@ -1,17 +1,23 @@
 version: "{build}"
-
 environment:
   global:
     HAXELIB_ROOT: C:\projects\haxelib
     WXWIN: C:\wxWidgets
-
 only_commits:
   files:
     - source/
-
 install:
   # http://help.appveyor.com/discussions/problems/5616-not-able-to-build-due-to-problem-in-chocolateyinstallps1
   - ps: Set-Service wuauserv -StartupType Manual
+  # Install and configure wxWidgets
+  - mkdir %WXWIN%
+  - ps: Invoke-WebRequest -Uri "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.5/wxWidgets-3.1.5.zip" -OutFile "$env:WXWIN\wxWidgets-3.1.5.zip"
+  - cd %WXWIN%
+  - ps: Expand-Archive -Force wxWidgets-3.1.5.zip .
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - cd build\msw
+  - nmake.exe -f makefile.vc BUILD=release
+  - cd C:\projects\izzyengine-win32
   # Install the haxe chocolatey package (https://chocolatey.org/packages/haxe)
   - cinst haxe --version 4.2.2 -y
   - RefreshEnv
@@ -26,11 +32,13 @@ install:
   - haxelib install flixel
   - haxelib run lime setup flixel
   - haxelib run lime setup
+  - haxelib git haxeui-core https://github.com/haxeui/haxeui-core
+  - haxelib git haxeui-hxwidgets https://github.com/haxeui/haxeui-hxwidgets
+  - haxelib git hxWidgets https://github.com/haxeui/hxWidgets
 
 build_script:
   - haxelib run lime build windows
-
 artifacts:
-  - path: export/release/windows/bin
-    name: IzzyEngine-win32
+  - path: crash-dialog/build/windows
+    name: CrashHandler
     type: zip
