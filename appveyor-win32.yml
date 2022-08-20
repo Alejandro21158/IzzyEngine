@@ -25,7 +25,7 @@ install:
   - mkdir "%HAXELIB_ROOT%"
   - haxelib setup "%HAXELIB_ROOT%"
   # Install project dependencies
-  - haxelib install hscript > log.txt || type log.txt && cmd /C exit 1
+  - haxelib install hscript  > log.txt || type log.txt && cmd /C exit 1
   - haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc  > log.txt || type log.txt && cmd /C exit 1
   - haxelib install lime  > log.txt || type log.txt && cmd /C exit 1
   - haxelib install openfl  > log.txt || type log.txt && cmd /C exit 1
