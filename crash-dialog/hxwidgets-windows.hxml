@@ -9,6 +9,6 @@
 -D windows
 -D ABI=-MD
 -D WXSTATIC
--D HXCPP_M64
+-D HXCPP_M32
 
 -cpp build/windows
