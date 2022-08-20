@@ -26,7 +26,6 @@ install:
   - haxelib setup "C:\projects\haxelib"
   # Install project dependencies
   - haxelib install lime
-  - haxelib install hscript
   - haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
   - haxelib install openfl
   - haxelib install flixel
@@ -35,6 +34,7 @@ install:
   - haxelib git haxeui-core https://github.com/haxeui/haxeui-core
   - haxelib git haxeui-hxwidgets https://github.com/haxeui/haxeui-hxwidgets
   - haxelib git hxWidgets https://github.com/haxeui/hxWidgets
+  - haxelib install hscript 2.5.0 
   - haxelib list
   
 build_script:
