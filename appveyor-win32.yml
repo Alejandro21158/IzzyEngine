@@ -17,7 +17,7 @@ install:
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat"
   - cd build\msw
   - nmake.exe -f makefile.vc BUILD=release
-  - cd C:\projects\izzyengine-win32
+  - cd C:\projects\IzzyEngine
   # Install the haxe chocolatey package (https://chocolatey.org/packages/haxe)
   - cinst haxe --version 4.2.2 -y
   - RefreshEnv
