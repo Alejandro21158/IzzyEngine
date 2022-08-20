@@ -25,16 +25,16 @@ install:
   - mkdir "C:\projects\haxelib"
   - haxelib setup "C:\projects\haxelib"
   # Install project dependencies
-  - haxelib install hscript  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib install lime  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib install openfl  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib install flixel  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib run lime setup flixel  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib run lime setup  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib git haxeui-core https://github.com/haxeui/haxeui-core  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib git haxeui-hxwidgets https://github.com/haxeui/haxeui-hxwidgets  > log.txt || type log.txt && cmd /C exit 1
-  - haxelib git hxWidgets https://github.com/haxeui/hxWidgets  > log.txt || type log.txt && cmd /C exit 1
+  - haxelib install lime
+  - haxelib install hscript
+  - haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
+  - haxelib install openfl
+  - haxelib install flixel
+  - haxelib run lime setup flixel
+  - haxelib run lime setup
+  - haxelib git haxeui-core https://github.com/haxeui/haxeui-core
+  - haxelib git haxeui-hxwidgets https://github.com/haxeui/haxeui-hxwidgets
+  - haxelib git hxWidgets https://github.com/haxeui/hxWidgets
   - haxelib list
   
 build_script:
